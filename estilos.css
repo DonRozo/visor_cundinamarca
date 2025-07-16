@@ -1,0 +1,197 @@
+/* --- ESTILOS GENERALES --- */
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+/* --- ENCABEZADO --- */
+#header-bar {
+  height: 60px;
+  background-color: #134174;
+  color: white;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  z-index: 100;
+}
+.header-left {
+  display: flex;
+  align-items: center;
+}
+.logo {
+  height: 45px;
+  margin-right: 15px;
+}
+#header-bar h1 {
+  font-size: 1.4em;
+  margin: 0;
+  font-weight: 500;
+}
+#search-widget-container {
+  width: 300px;
+}
+
+/* --- PANEL LATERAL Y MAPA --- */
+#sidebar {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 330px;
+  height: calc(100% - 60px);
+  background-color: #f8f9fa;
+  padding: 15px;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  z-index: 40;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+#viewDiv {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  height: calc(100% - 60px);
+  width: 100%;
+}
+#search-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+#sidebar h2 {
+  margin-top: 0;
+  font-weight: 500;
+  color: #333;
+}
+
+/* --- ESTILOS DE TARJETAS INTERACTIVAS --- */
+#card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.card {
+  background-color: transparent;
+  width: 100%;
+  height: 180px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 8px;
+}
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 8px;
+}
+.card-front {
+  background-color: #fff;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.card-front img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.card-front .card-title {
+  padding: 10px;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+.card-back {
+  background-color: #f1f1f1;
+  color: #333;
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  font-size: 0.85em;
+  overflow: hidden;
+}
+
+/* --- PANEL DE DETALLES (METADATOS) --- */
+#detail-pane {
+  display: none; /* Oculto por defecto */
+}
+/* ✅ NUEVO: Estilos para la miniatura y descripción en el panel de detalles */
+.detail-thumbnail {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+#detail-pane h3 {
+  margin-top: 0;
+  font-size: 1.2em;
+}
+.detail-description {
+  font-size: 0.9em;
+  line-height: 1.5;
+  border-left: 3px solid #007bff;
+  padding-left: 10px;
+  margin-top: 0;
+}
+.metadata-buttons {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.pill-button {
+  padding: 10px 15px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 50px;
+  transition: background-color 0.3s;
+  font-weight: bold;
+}
+.pill-button:hover {
+  background-color: #0056b3;
+}
+/* ✅ NUEVO: Estilo para el botón de "Volver" */
+.pill-button.secondary {
+    background-color: #6c757d; /* Color gris */
+}
+.pill-button.secondary:hover {
+    background-color: #5a6268;
+}
+
+/* --- WIDGETS DE MAPA --- */
+.esri-ui {
+  z-index: 50;
+}

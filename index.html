@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>Cartografía de Cundinamarca</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="estilos.css" />
+  <link rel="stylesheet" href="https://js.arcgis.com/4.29/esri/themes/light/main.css">
+  <script src="https://js.arcgis.com/4.29/"></script>
+</head>
+<body>
+
+  <div id="header-bar">
+    <div class="header-left">
+      <img src="https://cundinamarca-map.maps.arcgis.com/sharing/rest/content/items/b3f30beac0a949da80defac0672b4f54/data" alt="Logo" class="logo">
+      <h1>Cartografía de Cundinamarca</h1>
+    </div>
+    <div id="search-widget-container"></div>
+  </div>
+
+  <div id="sidebar">
+    <h2>Búsqueda de Información</h2>
+    <input type="text" id="search-input" placeholder="Buscar por palabra clave...">
+    
+    <div id="card-container"></div>
+
+    <div id="detail-pane"></div>
+  </div>
+
+  <div id="viewDiv"></div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
